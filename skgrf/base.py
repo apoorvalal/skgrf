@@ -211,9 +211,11 @@ class GRFMixin:
             )
             if getattr(self, "_estimator_type", None) == "classifier":
                 values = [
-                    np.bincount(v, weights=w, minlength=self.n_classes_).tolist()
-                    if v
-                    else [np.nan] * self.n_classes_
+                    (
+                        np.bincount(v, weights=w, minlength=self.n_classes_).tolist()
+                        if v
+                        else [np.nan] * self.n_classes_
+                    )
                     for v, w in zip(values, weights)
                 ]
             else:

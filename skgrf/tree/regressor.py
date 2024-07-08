@@ -10,7 +10,7 @@ from skgrf.tree.base import BaseGRFTree
 from skgrf.utils.validation import check_sample_weight
 
 if t.TYPE_CHECKING:  # pragma: no cover
-    from skgrf.ensemble.regressor import GRFForestRegressor
+    pass
 
 
 class GRFTreeRegressor(BaseGRFTree, RegressorMixin):
